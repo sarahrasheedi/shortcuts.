@@ -4,15 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>💻 دليل اختصارات الكمبيوتر</title>
-
-https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap
-
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body {
-  font-family: "Tajawal","Tahoma","Segoe UI","Arial",sans-serif;
-  margin:0; padding:0;
-  background:#fdfaf6; color:#333;
-  display:flex; justify-content:center; align-items:center;
+body { 
+  font-family: "Tajawal", "Tahoma", "Segoe UI", "Arial", sans-serif; 
+  margin:0; padding:0; 
+  background:#fdfaf6; color:#333; 
+  display:flex; justify-content:center; align-items:center; 
   min-height:100vh;
 }
 .container {
@@ -24,12 +22,20 @@ body {
   width:90%;
   background:#fffefc;
 }
-h1, h2 { display:flex; justify-content:center; align-items:center; gap:8px; }
-h1 .emoji, h2 .emoji { order:2; }
+h1, h2 {
+  display:flex; justify-content:center; align-items:center; gap:8px;
+}
+h1 .emoji, h2 .emoji { order:2; } 
 button {
-  padding:12px 25px; font-size:16px;
-  border:none; border-radius:8px; cursor:pointer;
-  font-weight:bold; background:#a8dadc; color:#000; margin:8px;
+  padding:12px 25px;
+  font-size:16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  background:#a8dadc;
+  color:#000;
+  margin:8px;
 }
 input {
   width:90%; max-width:600px;
@@ -38,25 +44,32 @@ input {
   margin-bottom:20px;
 }
 .suggestions {
-  max-width:600px; margin:0 auto;
-  background:#fff; border:1px solid #ccc;
-  border-radius:8px; text-align:right;
+  max-width:600px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid #ccc;
+  border-radius:8px;
+  text-align:right;
   overflow:hidden;
 }
 .suggestions div {
-  padding:10px; cursor:pointer;
+  padding:10px;
+  cursor:pointer;
 }
-.suggestions div:hover { background:#f1f1f1; }
+.suggestions div:hover {
+  background:#f1f1f1;
+}
 .cards-container {
-  display:flex; flex-wrap:wrap; justify-content:center;
+  display:flex; flex-wrap:wrap;
+  justify-content:center;
   gap:16px; margin-top:20px;
 }
 .card {
-  background:#eee; padding:16px;
-  border-radius:12px;
+  background:#eee;
+  padding:16px; border-radius:12px;
   min-width:200px; max-width:220px;
   cursor:pointer;
-  transition: .2s;
+  transition: transform 0.2s;
   border:2px solid #ddd;
 }
 .card:hover { transform:scale(1.05); }
@@ -69,82 +82,24 @@ input {
 }
 </style>
 </head>
-
 <body>
+
 <div id="app"></div>
 
 <script>
+// ========== البيانات ==========
 const shortcuts = {
-  Windows: {
-    system:[
-      {key:"Ctrl + C", desc:"نسخ النص"},{key:"Ctrl + V", desc:"لصق النص"},
-      {key:"Ctrl + X", desc:"قص النص"},{key:"Ctrl + Z", desc:"تراجع"},
-      {key:"Ctrl + Y", desc:"إعادة"},{key:"Alt + Tab", desc:"التبديل بين النوافذ"},
-      {key:"Win + L", desc:"قفل الجهاز"},{key:"Win + D", desc:"إظهار سطح المكتب"},
-      {key:"Ctrl + Shift + Esc", desc:"فتح مدير المهام"},{key:"Win + E", desc:"فتح مستكشف الملفات"}
-    ],
-    Word:[
-      {key:"Ctrl + B", desc:"خط عريض"},{key:"Ctrl + I", desc:"خط مائل"},
-      {key:"Ctrl + U", desc:"خط تحت النص"},{key:"Ctrl + A", desc:"تحديد الكل"},
-      {key:"Ctrl + L", desc:"محاذاة لليسار"},{key:"Ctrl + R", desc:"محاذاة لليمين"},
-      {key:"Ctrl + M", desc:"زيادة المسافة البادئة"},{key:"Ctrl + 1", desc:"تباعد أسطر مفرد"},
-      {key:"Ctrl + 2", desc:"تباعد أسطر مزدوج"},{key:"Ctrl + Shift + >", desc:"تكبير الخط"},
-      {key:"Ctrl + Shift + <", desc:"تصغير الخط"}
-    ],
-    Excel:[
-      {key:"Ctrl + Shift + L", desc:"تفعيل الفلاتر"},{key:"Ctrl + T", desc:"تحويل الجدول"},
-      {key:"Ctrl + ;", desc:"إدراج التاريخ"},{key:"Ctrl + Shift + :", desc:"إدراج الوقت"},
-      {key:"Alt + =", desc:"جمع تلقائي"},{key:"Ctrl + Arrow", desc:"الانتقال لنهاية الجدول"},
-      {key:"F2", desc:"تحرير الخلية"},{key:"Ctrl + D", desc:"نسخ من الأعلى"},
-      {key:"Ctrl + Space", desc:"تحديد العمود"},{key:"Shift + Space", desc:"تحديد الصف"}
-    ],
-    Photoshop:[
-      {key:"Ctrl + J", desc:"نسخ الطبقة"},{key:"Ctrl + T", desc:"تحويل حر"},
-      {key:"Ctrl + Shift + N", desc:"طبقة جديدة"},{key:"Ctrl + Alt + Z", desc:"تراجع متعدد"},
-      {key:"B", desc:"أداة الفرشاة"},{key:"E", desc:"أداة الممحاة"},
-      {key:"M", desc:"تحديد المستطيل"},{key:"L", desc:"أداة اللاسو"},
-      {key:"G", desc:"أداة التدرج"},{key:"Z", desc:"أداة التكبير"}
-    ],
-    Illustrator:[
-      {key:"Ctrl + G", desc:"تجميع العناصر"},{key:"Ctrl + Shift + G", desc:"فك التجميع"},
-      {key:"Ctrl + D", desc:"تكرار العملية"},{key:"Ctrl + 0", desc:"ملاءمة للشاشة"},
-      {key:"Ctrl + +", desc:"تكبير"},{key:"Ctrl + -", desc:"تصغير"},
-      {key:"P", desc:"أداة القلم"},{key:"A", desc:"التحديد المباشر"},
-      {key:"V", desc:"التحديد"},{key:"Shift + O", desc:"لوحات الرسم"}
-    ]
-  },
-
-  macOS: {
-    system:[
-      {key:"Cmd + C", desc:"نسخ"},{key:"Cmd + V", desc:"لصق"},
-      {key:"Cmd + X", desc:"قص"},{key:"Cmd + Z", desc:"تراجع"},
-      {key:"Cmd + Shift + Z", desc:"إعادة"},{key:"Cmd + Tab", desc:"التنقل بين التطبيقات"},
-      {key:"Cmd + Space", desc:"Spotlight"},{key:"Cmd + Option + Esc", desc:"فرض الإنهاء"},
-      {key:"Cmd + Shift + 3", desc:"لقطة كاملة"},{key:"Cmd + Shift + 4", desc:"لقطة محددة"}
-    ],
-    Word:[
-      {key:"Cmd + B", desc:"عريض"},{key:"Cmd + I", desc:"مائل"},
-      {key:"Cmd + U", desc:"تحته خط"}
-    ],
-    Excel:[
-      {key:"Cmd + T", desc:"تحويل الجدول"},{key:"Cmd + ;", desc:"إدراج التاريخ"}
-    ],
-    Photoshop:[
-      {key:"Cmd + J", desc:"نسخ الطبقة"},{key:"Cmd + T", desc:"تحويل حر"}
-    ],
-    Illustrator:[
-      {key:"Cmd + G", desc:"تجميع"},{key:"Cmd + Shift + G", desc:"فك التجميع"}
-    ]
-  }
+  Windows: { system:[{key:"Ctrl + C", desc:"نسخ النص"},{key:"Ctrl + V", desc:"لصق النص"},{key:"Ctrl + X", desc:"قص النص"},{key:"Ctrl + Z", desc:"تراجع"},{key:"Ctrl + Y", desc:"إعادة"},{key:"Alt + Tab", desc:"التبديل بين النوافذ"},{key:"Win + L", desc:"قفل الجهاز"},{key:"Win + D", desc:"إظهار سطح المكتب"},{key:"Ctrl + Shift + Esc", desc:"فتح مدير المهام"},{key:"Win + E", desc:"فتح مستكشف الملفات"}], Word:[{key:"Ctrl + B", desc:"خط عريض"},{key:"Ctrl + I", desc:"خط مائل"},{key:"Ctrl + U", desc:"خط تحت النص"},{key:"Ctrl + A", desc:"تحديد الكل"},{key:"Ctrl + L", desc:"محاذاة لليسار"},{key:"Ctrl + R", desc:"محاذاة لليمين"},{key:"Ctrl + M", desc:"زيادة المسافة البادئة"},{key:"Ctrl + 1", desc:"تباعد أسطر مفرد"},{key:"Ctrl + 2", desc:"تباعد أسطر مزدوج"},{key:"Ctrl + Shift + >", desc:"تكبير حجم الخط"},{key:"Ctrl + Shift + <", desc:"تصغير حجم الخط"}], Excel:[{key:"Ctrl + Shift + L", desc:"تفعيل الفلاتر"},{key:"Ctrl + T", desc:"تحويل الجدول"},{key:"Ctrl + ;", desc:"إدراج التاريخ"},{key:"Ctrl + Shift + :", desc:"إدراج الوقت"},{key:"Alt + =", desc:"جمع تلقائي"},{key:"Ctrl + Arrow", desc:"الانتقال لنهاية الجدول"},{key:"F2", desc:"تحرير الخلية"},{key:"Ctrl + D", desc:"نسخ من الأعلى"},{key:"Ctrl + Space", desc:"تحديد العمود"},{key:"Shift + Space", desc:"تحديد الصف"}], Photoshop:[{key:"Ctrl + J", desc:"نسخ الطبقة"},{key:"Ctrl + T", desc:"تحويل حر"},{key:"Ctrl + Shift + N", desc:"طبقة جديدة"},{key:"Ctrl + Alt + Z", desc:"تراجع متعدد"},{key:"B", desc:"أداة الفرشاة"},{key:"E", desc:"أداة الممحاة"},{key:"M", desc:"تحديد المستطيل"},{key:"L", desc:"أداة اللاسو"},{key:"G", desc:"أداة التدرج"},{key:"Z", desc:"أداة التكبير"}], Illustrator:[{key:"Ctrl + G", desc:"تجميع العناصر"},{key:"Ctrl + Shift + G", desc:"فك التجميع"},{key:"Ctrl + D", desc:"تكرار آخر عملية"},{key:"Ctrl + 0", desc:"ملاءمة العمل للشاشة"},{key:"Ctrl + +", desc:"تكبير"},{key:"Ctrl + -", desc:"تصغير"},{key:"P", desc:"أداة القلم"},{key:"A", desc:"أداة التحديد المباشر"},{key:"V", desc:"أداة التحديد"},{key:"Shift + O", desc:"أداة لوحات الرسم"}] },
+  macOS: { system:[{key:"Cmd + C", desc:"نسخ"},{key:"Cmd + V", desc:"لصق"},{key:"Cmd + X", desc:"قص"},{key:"Cmd + Z", desc:"تراجع"},{key:"Cmd + Shift + Z", desc:"إعادة"},{key:"Cmd + Tab", desc:"التبديل بين التطبيقات"},{key:"Cmd + Space", desc:"فتح Spotlight"},{key:"Cmd + Option + Esc", desc:"فرض إنهاء التطبيق"},{key:"Cmd + Shift + 3", desc:"لقطة شاشة كاملة"},{key:"Cmd + Shift + 4", desc:"لقطة شاشة محددة"}], Word:[{key:"Cmd + B", desc:"خط عريض"},{key:"Cmd + I", desc:"خط مائل"},{key:"Cmd + U", desc:"خط تحت النص"}], Excel:[{key:"Cmd + T", desc:"تحويل الجدول"},{key:"Cmd + ;", desc:"إدراج التاريخ"}], Photoshop:[{key:"Cmd + J", desc:"نسخ الطبقة"},{key:"Cmd + T", desc:"تحويل حر"}], Illustrator:[{key:"Cmd + G", desc:"تجميع العناصر"},{key:"Cmd + Shift + G", desc:"فك التجميع"}] }
 };
 
 let userOS = null;
 const appDiv = document.getElementById("app");
 
-function renderDeviceSelection() {
+function renderDeviceSelection(){
   appDiv.innerHTML = `
     <div class="container">
-      <h1><span>دليل اختصارات الكمبيوتر</span><span class="emoji">💻</span></h1>
+      <h1><span>دليل اختصارات الكمبيوتر</span> <span class="emoji">💻</span></h1>
       <p>اختر نظامك لعرض الاختصارات</p>
       <button onclick="selectOS('Windows')">Windows</button>
       <button onclick="selectOS('macOS')">macOS</button>
@@ -152,19 +107,16 @@ function renderDeviceSelection() {
   `;
 }
 
-function selectOS(os) {
-  userOS = os;
-  renderMainPage();
-}
+function selectOS(os){ userOS = os; renderMainPage(); }
 
-function renderMainPage() {
+function renderMainPage(){
   const systemShortcuts = shortcuts[userOS].system;
   appDiv.innerHTML = `
     <div class="container">
-      <h1><span>اختصارات ${userOS}</span><span class="emoji">🖥️</span></h1>
+      <h1><span>اختصارات ${userOS}</span> <span class="emoji">🖥️</span></h1>
       <input id="search" placeholder="ابحث عن برنامج: Word, Excel, Photoshop, Illustrator">
       <div id="suggestions" class="suggestions"></div>
-      <h2><span>الاختصارات الأساسية</span><span class="emoji">📌</span></h2>
+      <h2><span>الاختصارات الأساسية</span> <span class="emoji">📌</span></h2>
       <div class="cards-container" id="cards"></div>
       <button class="back-btn" onclick="renderDeviceSelection()">رجوع لاختيار النظام ⬅</button>
     </div>
@@ -173,32 +125,29 @@ function renderMainPage() {
   setupSearch();
 }
 
-function setupSearch() {
+function setupSearch(){
   const input = document.getElementById("search");
   const suggestionsDiv = document.getElementById("suggestions");
-
-  input.addEventListener("input", () => {
+  input.addEventListener("input", ()=>{
     const val = input.value.trim().toLowerCase();
-    suggestionsDiv.innerHTML = "";
-    if (!val) return;
-
-    const programs = Object.keys(shortcuts[userOS]).filter(p => p !== "system");
-    const matches = programs.filter(p => p.toLowerCase().startsWith(val));
-
-    matches.forEach(m => {
+    suggestionsDiv.innerHTML="";
+    if(!val) return;
+    const programs = Object.keys(shortcuts[userOS]).filter(p=>p!=="system");
+    const matches = programs.filter(p=>p.toLowerCase().startsWith(val));
+    matches.forEach(m=>{
       const div = document.createElement("div");
       div.textContent = m;
-      div.onclick = () => renderProgramPage(m);
+      div.onclick = ()=>renderProgramPage(m);
       suggestionsDiv.appendChild(div);
     });
   });
 }
 
-function renderProgramPage(program) {
+function renderProgramPage(program){
   const programShortcuts = shortcuts[userOS][program];
   appDiv.innerHTML = `
     <div class="container">
-      <h1><span>اختصارات ${program} (${userOS})</span><span class="emoji">📘</span></h1>
+      <h1><span>اختصارات ${program} (${userOS})</span> <span class="emoji">📘</span></h1>
       <div class="cards-container" id="cards"></div>
       <button class="back-btn" onclick="renderMainPage()">رجوع للصفحة الرئيسية ⬅</button>
       <button class="back-btn" onclick="renderDeviceSelection()">رجوع لاختيار النظام ⬅</button>
@@ -207,28 +156,25 @@ function renderProgramPage(program) {
   renderCards(programShortcuts);
 }
 
-function renderCards(list) {
+function renderCards(list){
   const cardsDiv = document.getElementById("cards");
   cardsDiv.innerHTML = "";
-
-  list.forEach(s => {
+  list.forEach(s=>{
     const div = document.createElement("div");
-    div.className = "card";
-    div.style.backgroundColor = randomColor();
-    div.innerHTML = `<h3>${s.key}</h3><p>${s.desc}</p>`;
-    div.onclick = () => {
-      navigator.clipboard.writeText(s.key);
-      alert("تم نسخ: " + s.key);
-    };
+    div.className="card";
+    div.style.backgroundColor=randomColor();
+    div.innerHTML=`<h3>${s.key}</h3><p>${s.desc}</p>`;
+    div.onclick=()=>{navigator.clipboard.writeText(s.key); alert("تم نسخ: "+s.key);};
     cardsDiv.appendChild(div);
   });
 }
 
-function randomColor() {
-  const colors = ["#f6bd60","#f7ede2","#f5cac3","#84a59d","#d8e2dc","#e8dff5","#fde2e4","#cdeac0"];
-  return colors[Math.floor(Math.random() * colors.length)];
+function randomColor(){
+  const colors=["#f6bd60","#f7ede2","#f5cac3","#84a59d","#d8e2dc","#e8dff5","#fde2e4","#cdeac0"];
+  return colors[Math.floor(Math.random()*colors.length)];
 }
 
+// البداية
 renderDeviceSelection();
 </script>
 </body>
