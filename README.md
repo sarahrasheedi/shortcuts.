@@ -1,7 +1,7 @@
 Description 📌
 This project is an interactive web tool designed to display and organize keyboard shortcuts for different operating systems and applications. The interface allows users to select their OS, browse essential shortcuts, and search for programs like Word, Excel, Photoshop, and Illustrator.
 
-Features ✅ 
+Features ✅
 
 Organized list of shortcuts for Windows and macOS
 Search bar with live suggestions
@@ -20,7 +20,7 @@ Google Fonts (Tajawal)
 Clipboard API for copying shortcuts
 
 
-How It Works
+How It Works ⚙️
 
 The user selects their operating system from the main screen.
 The app loads system shortcuts and provides a search box for app‑specific shortcuts.
